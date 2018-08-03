@@ -1,0 +1,142 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <!-- Title -->
+    <title>Contact Us</title>
+
+    <!-- Link to CSS -->
+    <!-- Live CSS -->
+    <link rel="stylesheet" href="http://www.totherescuecpr.com/main.css">
+    <!-- Test CSS -->
+    <!-- <link rel="stylesheet" href="http://www.kaetzi.com/software_portfolio/current_projects/cpr/main.css"> -->
+    <!-- Local CSS -->
+    <!-- <link rel="stylesheet" href="file:///Users/kpolahar/Documents/CPR/cpr/css/stylesheets/main.css"> -->
+
+    <!-- JavaScript for Google Analytics -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-93343742-2', 'auto');
+      ga('send', 'pageview');
+    </script>
+
+    <!-- JavaScript for Fonts -->
+    <script src="https://use.typekit.net/lkt7lmq.js"></script>
+    <script>
+      try { Typekit.load( { async: true } ); }
+      catch ( e ) { }
+    </script>
+  </head>
+  <body>
+    <div id="siteSubHeader">
+      <div id="ribbons">
+        <a id="titleRibbon" href="http://www.totherescuecpr.com">
+          <div id="siteSubLogo">
+          </div>
+          <div id="siteSubTitle">
+            <h1>To&nbsp;The Rescue&nbsp;CPR</h1>
+            <h2>Contact Us</h2>
+          </div>
+        </a>
+        <div id="navRibbon">
+          <div id="siteNav">
+            <a id="aboutUsLink" href="http://www.totherescuecpr.com/about.html">
+              <div id="aboutUsButton" class="button">
+                <p class="button-text">About Us</p>
+              </div>
+            </a>
+            <a id="coursesLink" href="http://www.totherescuecpr.com/courses.html">
+              <div id="coursesButton" class="button">
+                <p class="button-text">Courses</p>
+              </div>
+            </a>
+            <a id="calendarLink" href="http://www.totherescuecpr.com/calendar.html">
+              <div id="calendarButton" class="button">
+                <p class="button-text">Calendar</p>
+              </div>
+            </a>
+            <a id="contactUsLink" href="http://www.totherescuecpr.com/contact.html">
+              <div id="contactUsButton" class="button">
+                <p class="button-text">Contact Us</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="siteBody">
+      <div id="contactGrid" class="grid">
+        <div class="sub-grid">
+          <div id="contactUs" class="split grid-item">
+            <div class="pic"></div>
+            <div class="body">
+              <div class="header">
+                <h3>Contact Katherine&nbsp;Johnson</h3>
+              </div>
+              <div class="text">
+                <p>
+                  <a class="text-red" href="tel:+1-6186047727">
+                    618&#x2011;604&#x2011;7727
+                  </a>
+                </p>
+                <p class="space-10"></p>
+                <p>
+                  <a class="text-red" href="mailto:totherescuecpr@gmail.com" target="_top">
+                    ToTheRescueCPR@gmail.com
+                  </a>
+                </p>
+                <p class="space-10"></p>
+                <p>
+                   214 North Ruby Lane
+                   <br>
+                   Fairview Heights, IL  62208
+                   <br>
+                 </p>
+                 <p>
+                   <a class="text-red" href="https://www.google.com/maps/dir//214+North+Ruby+Lane,+Fairview+Heights,+IL/" target="_blank">
+                   Click here for Directions</a>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div id="map" class="grid-item">
+            <script>
+              var map;
+              function initMap() {
+                map = new google.maps.Map(document.getElementById('map'), {
+                  center: {lat: 38.623859, lng: -90.093804},
+                  zoom: 10
+                });
+                var marker = new google.maps.Marker({
+                  animation: google.maps.Animation.DROP,
+                  position: {lat: 38.604761, lng: -89.993989},
+                  map: map
+                });
+                marker.addListener('click', toggleBounce);
+              }
+              function toggleBounce() {
+                if (marker.getAnimation() !== null) {
+                  marker.setAnimation(null);
+                } else {
+                  marker.setAnimation(google.maps.Animation.BOUNCE);
+                }
+              }
+            </script>
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA4anL_YgWiw2ojBI0d3jyCjq6Te8aJNsQ&callback=initMap"
+            async defer></script>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="siteFooter">
+      <p>&copy;&nbsp;2018 To The Rescue CPR</p>
+    </div>
+  </body>
+</html>
