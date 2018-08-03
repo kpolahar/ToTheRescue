@@ -1,0 +1,105 @@
+@import 'stylesheets/base/_base';
+
+#siteBody
+{ @include flex(column, center, center); }
+
+.grid
+{ padding: 50px 0; }
+
+.sub-grid
+{
+  align-items: stretch;
+  height:      400px;
+  width:       100%;
+}
+
+.grid-item
+{
+  @include border-radius(10px);
+  background-color: $gray-24;
+  box-shadow:       3px 3px 10px $gray-6;
+  overflow:         hidden;
+  margin:           0 0 45px 0;
+}
+
+.pic
+{
+  @include size(16.9vw, 100%);
+  background-size:   100% 100%;
+  background-repeat: no-repeat;
+  flex-grow:         0;
+  flex-shrink:       0;
+}
+
+.body
+{
+  @include flex(column, center, center);
+  flex-grow: 0;
+}
+
+.header *
+{
+  color:     $red-9;
+  font-size: 24px;
+}
+
+.text p
+{
+  line-height: 1.2;
+  font-size:   16px;
+}
+
+.split
+{
+  @include flex(row, center, space-between);
+  height: 100%;
+  width:  100%;
+
+  .body
+  {
+    @include flex(column, center, center);
+    flex-grow: 0;
+
+    div
+    {
+      width:   90%;
+      padding: 15px 30px 5px 30px;
+    }
+  }
+}
+
+.column
+{
+  @include flex(column, flex-start, center);
+  width:  30%;
+
+  div
+  { width: 90%; }
+}
+
+.row
+{
+  @include flex(row, flex-start, center);
+  @include size(180px, 100%);
+  flex-grow:   0;
+  flex-shrink: 0;
+
+  .body
+  {
+    @include flex(column, flex-start, flex-start);
+    @include size(100%, 720px);
+    padding: 20px 35px 10px 30px;
+
+    .div
+    {
+      @include flex(row, flex-start, center);
+      width:   90%;
+    }
+
+    .header
+    { padding: 5px 0 15px 0; }
+  }
+
+  .pic
+  { @include size(200px, 300px); }
+}

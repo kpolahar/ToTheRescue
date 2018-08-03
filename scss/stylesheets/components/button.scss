@@ -1,0 +1,25 @@
+@import 'stylesheets/base/_base';
+
+.button
+{
+  @include flex(column, center, center);
+  @include border-radius(10px);
+
+  background-color: $red-9;
+  border:           none;
+  box-shadow:       3px 3px 5px $gray-3;
+  width:            20vw;
+  height:           7.2vw;
+  margin:           10px;
+  
+  &:hover
+  { box-shadow: inset 0 2px 3px $red-6; }
+}
+
+.button-text
+{
+  color:       $gray-25;
+  font-size:   3vw;
+  font-weight: bolder;
+  margin:      3px 0 0 0;
+}

@@ -1,0 +1,20 @@
+@import 'stylesheets/base/_base';
+
+#calendarGrid
+{
+  @include flex(column, flex-start, center);
+  @include size(auto, 85%);
+  padding: 50px 0;
+
+  #calendar
+  {
+    @include flex(row, center, center);
+    @include size(auto !important, 100%);
+
+    .text
+    {
+      @include flex(column, center, center);
+      @include size(100%, 200px);
+    }
+  }
+}

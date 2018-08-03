@@ -1,0 +1,131 @@
+@import 'stylesheets/base/_base';
+
+@media (min-width: 1020px)
+{
+  #coursesGrid
+  {
+    @include flex(column, flex-start, center);
+    @include size(2400px, 960px);
+    padding: 50px 0;
+
+    .sub-grid
+    { @include size(100%, 100%); }
+  }
+}
+
+@media (max-width: 1020px)
+{
+  #coursesGrid
+  {
+    @include flex(row, flex-start, space-around);
+    @include size(3690px, 90%);
+    flex-wrap: wrap;
+    padding:   50px 0;
+    
+    .row
+    {
+      @include flex(column, flex-start, center);
+      @include size(550px, 300px);
+      flex-grow:   0;
+      flex-shrink: 0;
+      margin:      0 20px 45px 20px;
+
+      .body
+      {
+        @include flex(column, flex-start, flex-start);
+        @include size(100%, 300px);
+
+        .header
+        {
+          width: 90%;
+          padding: 5px 35px 10px 30px;
+        }
+
+        .text
+        {
+          width: 90%;
+          padding: 5px 35px 10px 30px;
+        }
+      }
+
+      .pic
+      { @include size(200px, 300px); }
+    }
+  }
+}
+
+@media (max-width: 780px)
+{
+  #coursesGrid
+  {
+    @include flex(row, flex-start, space-around);
+    @include size(7200px, 90%);
+    flex-wrap: wrap;
+    padding:   50px 0;
+
+    .row
+    {
+      @include flex(column, flex-start, center);
+      @include size(575px, 300px);
+      flex-grow:   0;
+      flex-shrink: 0;
+      margin:      0 20px 45px 20px;
+
+      .body
+      {
+        @include flex(column, flex-start, flex-start);
+        @include size(100%, 300px);
+
+        .header
+        {
+          width: 90%;
+          padding: 5px 35px 10px 30px;
+        }
+
+        .text
+        {
+          width: 80%;
+          padding: 5px 35px 10px 30px;
+        }
+      }
+
+      .pic
+      { @include size(200px, 300px); }
+    }
+  }
+}
+
+
+
+#basicLifeSupport
+{ background-image: url($root + "/assets/air2.jpg"); }
+
+#cardiopulmonaryResuscitation
+{ background-image: url($root + "/assets/closeup.jpg"); }
+
+#automatedExternalDefibrilator
+{ background-image: url($root + "/assets/aed.jpg"); }
+
+#firstAid
+{ background-image: url($root + "/assets/gear.jpg"); }
+
+#healthCareProvider
+{ background-image: url($root + "/assets/medical.jpg"); }
+
+#heartSaver
+{ background-image: url($root + "/assets/group-dummies.jpg"); }
+
+#bloodbornePathogen
+{ background-image: url($root + "/assets/dummies.jpg"); }
+
+#blast
+{ background-image: url($root + "/assets/infant-air.jpg"); }
+
+#pediatric
+{ background-image: url($root + "/assets/infant-closeup.jpg"); }
+
+#petCPR
+{ background-image: url($root + "/assets/little-dog.jpg"); }
+
+#petFirstAid
+{ background-image: url($root + "/assets/puppy.jpg"); }

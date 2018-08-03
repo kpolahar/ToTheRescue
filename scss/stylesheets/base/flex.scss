@@ -1,0 +1,46 @@
+@mixin flex($direction: column, $vertical: center, $horizontal: center)
+{
+  display:        flex;
+  flex-direction: $direction;
+
+  @if ($direction == column)
+  {
+    justify-content: $vertical;
+    align-items:     $horizontal;
+  }
+  @else if ($direction == row)
+  {
+    justify-content: $horizontal;
+    align-items:     $vertical;
+  }
+}
+
+@mixin flex-center($main: row)
+{
+  @if ($main == column)
+  {
+    justify-content: flex-start;
+    align-items:     center;
+  }
+  @else if ($main == row)
+  {
+    justify-content: center;
+    align-items:     center;
+  }
+}
+
+.flex-column 
+{
+  @include flex-center(column);
+
+  display:         flex;
+  flex-direction:  column;
+}
+
+.flex-row 
+{
+  @include flex-center(row);
+
+  display:         flex;
+  flex-direction:  row;
+}

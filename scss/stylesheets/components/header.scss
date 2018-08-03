@@ -1,0 +1,147 @@
+@import 'stylesheets/base/_base';
+
+#siteHeader
+{
+  @include flex(column, center, center);
+  
+  #siteLogo
+  {
+    @include flex(column, center, center);
+    @include size(30vw, 100%);
+    background-color:  $gray-24;
+    background-image:  url($root + "/assets/logo.svg");
+    background-size:   100% 100%;
+    background-repeat: no-repeat;
+    flex-grow:         0;
+    flex-shrink:       0;
+    padding:           20px 0;
+  }
+
+  #siteTitle
+  {
+    align-self:  center;
+    color:       $gray-25;
+    font-weight: bolder;
+  }
+
+  #titleRibbon
+  { 
+    @include flex(column, center, center);
+    background-color: $teal-6;
+  }
+
+  #navRibbon
+  {
+    @include flex(column, center, center);
+    background-color: $gray-7;
+  }
+
+  #siteNav
+  {
+    @include  flex(row, center, space-around);
+    @include size(100%, 100%);
+    align-self: center;
+    padding:    30px;
+  }
+}
+
+
+
+@media (min-width: 1200px)
+{
+  #siteHeader
+  {
+    #ribbons
+    {
+      @include flex(column, center, center);
+      width: 100%;
+
+      #titleRibbon
+      { @include size(160px, 100%); }
+
+      #siteTitle
+      {
+        padding:     10px 0 0 0;
+        font-size:   96px;
+      }
+
+      #navRibbon
+      { @include size(150px, 100%);  }
+    }
+  }
+}
+
+@media (max-width: 1200px)
+{
+  #siteHeader
+  {
+    #siteLogo
+    { padding: 10px; }
+
+    #ribbons
+    {
+      @include flex(column, center, center);
+      width: 100%;
+
+      #titleRibbon
+      { @include size(100px, 100%); }
+
+      #siteTitle
+      {
+        padding:     10px 0 0 0;
+        font-size:   64px;
+      }
+
+      #navRibbon
+      { @include size(12vw, 100%); }
+    }
+  }
+}
+
+@media (max-width: 635px)
+{
+  #siteHeader
+  {
+    #siteLogo
+    {
+      background-image: url($root + "/assets/logo-min.svg");
+      background-size:  100% 100%;
+      padding: 10px;
+    }
+
+    #ribbons
+    {
+      @include flex(column, center, center);
+      width: 100%;
+
+      #titleRibbon
+      { @include size(180px, 100%); }
+
+      #siteTitle
+      {
+        text-align: center;
+        padding:    10px 20px 0 20px;
+      }
+
+      #navRibbon
+      {
+        @include size(44vw, 100%);
+
+        #siteNav
+        {
+          flex-wrap: wrap;
+          padding:    12px;
+
+          .button
+          {
+            width:  40vw;
+            height: 14.4vw;
+          }
+
+          .button-text
+          { font-size: 5vw; }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,190 @@
+@import 'stylesheets/base/_base';
+
+#whoShouldLearn
+{ background-image: url($root + "/assets/medical.jpg"); }
+
+#whyChoose
+{ background-image: url($root + "/assets/closeup.jpg"); }
+
+#schedulingOptions
+{ background-image: url($root + "/assets/faces.jpg"); }
+
+@media (min-width: 1020px)
+{
+  #homeGrid
+  {
+    @include flex(row, center, space-between);
+    align-items: stretch;
+    width:       90%;
+    padding:     50px 0;
+
+    .grid-item
+    {
+      @include flex(column, flex-start, center);
+      width: 30%;
+
+      .pic
+      {
+        @include size(16.9vw, 100%);
+        flex-grow:   0;
+        flex-shrink: 0;
+      }
+
+      .body
+      {
+        display:   block;
+        width:     100%;
+        padding:   10px;
+
+        .header
+        {
+          @include flex(row, center, center);
+          text-align: center;
+          width:      100%;
+          min-height: 50px;
+          padding:    10px 0;
+
+          p, p i
+          {
+            text-align:  center;
+            font-size:   28px;
+            font-weight: bolder;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1020px)
+{
+  #homeGrid
+  {
+    @include flex(row, center, space-between);
+    align-items: stretch;
+    flex-wrap:   wrap;
+    width:       80%;
+    padding:     50px 0;
+
+    .grid-item
+    {
+      @include flex(column, flex-start, center);
+      width: 45%;
+
+      .pic
+      {
+        @include size(24vw, 100%);
+        flex-grow:   0;
+        flex-shrink: 0;
+      }
+
+      .body
+      {
+        display:   block;
+        width:     100%;
+        padding:   10px;
+
+        .header
+        {
+          @include flex(row, center, center);
+          text-align: center;
+          width:      100%;
+          min-height: 50px;
+          padding:    10px 0;
+
+          p, p i
+          {
+            text-align:  center;
+            font-size:   28px;
+            font-weight: bolder;
+          }
+        }
+      }
+    }
+
+    #schedulingOptionsGridItem
+    {
+      @include flex(row, flex-start, center);
+      @include size(300px, 100%);
+      flex-grow:   0;
+      flex-shrink: 0;
+
+      .body
+      {
+        @include flex(column, flex-start, flex-start);
+        @include size(100%, 100%);
+        padding: 20px 15px 0px 15px;
+
+        .div
+        {
+          @include flex(row, flex-start, center);
+          width: 100%;
+        }
+
+        .header
+        { padding: 5px 0 15px 0; }
+
+        .text
+        { @include size(100%, 100%); }
+      }
+
+      .pic
+      { @include size(300px, 200px); }
+
+      #schedulingOptions
+      { background-image: url($root + "/assets/hands.jpg"); }
+    }
+  }
+}
+
+@media (max-width: 700px)
+{
+  #homeGrid
+  {
+    @include flex(row, center, center);
+    align-items: stretch;
+    width:       90%;
+    height:      1900px;
+    padding:     50px 0;
+
+    .grid-item, #schedulingOptionsGridItem
+    {
+      @include flex(column, flex-start, center);
+      width: 85%;
+      height: auto;
+
+      .pic
+      {
+        @include size(51vw, 100%);
+        flex-grow:   0;
+        flex-shrink: 0;
+      }
+
+      #schedulingOptions
+      { background-image: url($root + "/assets/faces.jpg"); }
+
+      .body
+      {
+        display:   block;
+        width:     100%;
+        padding:   10px;
+
+        .header
+        {
+          @include flex(row, center, center);
+          text-align: center;
+          width:      100%;
+          min-height: 50px;
+          padding:    10px 0;
+
+          p, p i
+          {
+            text-align:  center;
+            font-size:   28px;
+            font-weight: bolder;
+          }
+        }
+      }
+    }
+  }
+}

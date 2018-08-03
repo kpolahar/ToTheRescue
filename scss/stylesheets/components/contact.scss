@@ -1,0 +1,92 @@
+@import 'stylesheets/base/_base';
+
+#contactGrid
+{
+  @include flex(column, flex-start, center);
+  flex-wrap: wrap;
+
+  .sub-grid
+  {
+    @include size(400px, 100%);
+  }
+}
+
+#contactUs
+{
+  flex-grow:   0;
+  flex-shrink: 0;
+
+  .pic
+  {
+    @include size(100%, 266px);
+    background-image: url($root + "/assets/hands.jpg");
+    flex-grow:   0;
+    flex-shrink: 0;
+  }
+
+  p
+  { padding: 5px; }
+}
+
+#map
+{
+  @include flex(column, center, center);
+  @include size(400px, 30%);
+  flex-grow:   0;
+  flex-shrink: 0;
+}
+
+@media (min-width: 1020px)
+{
+  #contactGrid
+  {
+    @include size(700px, 1020px);
+
+    .sub-grid
+    { @include flex(row, flex-start, space-between); }
+  }
+
+  #contactUs
+  { @include size(100%, 65%); }
+}
+
+@media (max-width: 1020px)
+{
+  #contactGrid
+  {
+    @include size(1020px, 1020px);
+
+    .sub-grid
+    { @include flex(column, flex-start, center); }
+  }
+
+  #contactUs
+  { @include size(400px, 65%); }
+
+  #map
+  { @include size(400px, 65%); }
+}
+
+@media (max-width: 700px)
+{
+  #contactUs
+  {
+    @include flex(column, flex-start, center);
+    @include size(450px, 300px);
+
+    div
+    { width: 90%; }
+
+    .pic
+    {
+      @include size(200px, 100%);
+      background-image: url($root + "/assets/hands2.jpg");
+    }
+
+    p
+    { padding: 2px; }
+  }
+
+  #map
+  { @include size(400px, 300px); }
+}

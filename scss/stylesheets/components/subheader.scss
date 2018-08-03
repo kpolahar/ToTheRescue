@@ -1,0 +1,197 @@
+@import 'stylesheets/base/_base';
+
+#siteSubHeader
+{
+  @include flex(row, center, center);
+
+  #ribbons
+  { 
+    @include flex(column, center, center);
+    width: 100%;
+  }
+
+  #siteSubLogo
+  {
+    @include flex(column, center, center);
+    @include size(160px, 100%);
+    background-image:  url($root + "/assets/logo-min-light.svg");
+    background-size:   100% 100%;
+    background-repeat: no-repeat;
+    flex-grow:         0;
+    flex-shrink:       0;
+    margin:            20px 10px 0 50px;
+  }
+
+  #titleRibbon
+  { 
+    @include flex(column, center, center);
+    background-color: $teal-6;
+  }
+
+  #siteSubTitle
+  {
+    @include flex(column, center, center);
+    align-self: center;
+    padding:    10px 0 0 30px;
+
+    h1, h2
+    {
+      color:       $gray-25;
+      font-weight: bolder;
+    }
+  }
+
+  #navRibbon
+  {
+    @include flex(column, center, center);
+    background-color: $gray-7;
+  }
+
+  #siteNav
+  {
+    @include  flex(row, center, space-around);
+    @include size(100%, 100%);
+    align-self: center;
+    padding:    30px;
+  }
+}
+
+@media (min-width: 1200px)
+{
+  #siteSubHeader
+  {
+    @include size(320px, 100%);
+
+    #siteSubLogo
+    { @include size(180px, 398px); }
+
+    #titleRibbon 
+    {
+      @include flex(row, center, center);
+      @include size(210px, 100%);
+
+      #siteSubTitle
+      {
+        @include size(200px, 100%);
+
+        h1
+        {
+          font-size: 72px;
+          padding:   0 0 10px 0;
+        }
+        
+        h2
+        { font-size: 56px; }
+      }
+    }
+
+    #navRibbon
+    { @include size(150px, 100%);  }
+  }
+}
+
+@media (max-width: 1200px)
+{
+  #siteSubHeader
+  {
+    #titleRibbon
+    {
+      @include flex(row, center, center); 
+      @include size(160px, 100%);
+      
+      #siteSubTitle
+      {
+        height: 160px;
+        justify-content: center;
+        padding: 0 20px 0 0;
+
+        h1
+        {
+          text-align: center;
+          font-size: 48px;
+          padding:   0 0 10px 0;
+        }
+        
+        h2
+        { font-size: 36px; }
+      }
+
+      #siteSubLogo
+      {
+        @include size(140px, 348px);
+        margin: 15px 10px 10px 50px;
+      }
+    }
+
+    #navRibbon
+    { @include size(12vw, 100%); }
+  }
+}
+
+@media (max-width: 800px)
+{
+  #siteSubHeader
+  {
+    #titleRibbon
+    {
+      @include flex(column, center, center);
+      @include size(320px, 100%);
+      text-align: center;
+    
+      #siteSubTitle
+      {
+        @include size(120px, 100%);
+        margin: 0 0 15px 0;
+        padding: 0;
+      }
+
+      #siteSubLogo
+      {
+        @include size(200px, 498px);
+        margin: 15px 10px 10px 10px;
+      }
+    }
+
+    #navRibbon
+    {
+      @include size(44vw, 100%);
+
+      #siteNav
+      {
+        flex-wrap: wrap;
+        padding:    12px;
+
+        .button
+        {
+          width:  40vw;
+          height: 14.4vw;
+        }
+
+        .button-text
+        { font-size: 5vw; }
+      }
+    }
+  }
+}
+
+@media (max-width: 600px)
+{
+  #siteSubHeader
+  {
+    #titleRibbon
+    {
+      @include size(360px, 100%);
+
+      #siteSubTitle
+      {
+        @include size(130px, 100%);
+      }
+
+      #siteSubLogo
+      {
+        @include size(180px, 90vw);
+        margin: 5px 10px 10px 10px;
+      }
+    }
+  }
+}

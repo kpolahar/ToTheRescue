@@ -1,0 +1,139 @@
+@import 'stylesheets/base/_base';
+
+
+#aboutGrid
+{
+  @include flex(row, flex-start, center);
+
+  .sub-grid
+  { @include size(100%, 100%); }
+}
+
+#meetKathy
+{
+  .pic
+  {
+    @include size(100%, 266px);
+    background-image: url($root + "/assets/kathy.jpg");
+    flex-grow:   0;
+    flex-shrink: 0;
+  }
+
+  .body
+  { padding: 25px 0 0 0; }
+
+  .header
+  { padding: 15px 30px 5px 30px; }
+}
+
+#certifications
+{
+  @include flex(row, center, center);
+  height:  125px;
+  padding: 0;
+  margin:  0;
+
+  img
+  {
+    padding: 0;
+    margin:  0 10px;
+  }
+
+  #aha
+  {
+    width:   215px;
+    height:  auto;
+    padding: 0 0 55px 0;
+  }
+
+  #ecsi
+  {
+    width:   auto;
+    height:  125px;
+    padding: 0 0 60px 0;
+  }
+}
+
+#ourMission
+{ @include size(100%, 30%); }
+
+#missionHeader
+{
+  padding: 20px 30px 0 30px;
+
+  h3
+  { padding: 10px 0; }
+}
+
+#missionText
+{
+  padding: 10px 30px; 
+
+  p
+  { padding: 5px; }
+}
+
+@media (min-width: 1020px)
+{
+  #aboutGrid
+  {
+    @include size(400px, 1020px);
+
+    .sub-grid
+    { @include flex(row, flex-start, space-between); }
+  }
+
+  #meetKathy
+  { @include size(100%, 65%); }
+}
+
+@media (max-width: 1020px)
+{
+  #aboutGrid
+  {
+    @include size(1000px, 1020px);
+
+    .sub-grid
+    { @include flex(column, flex-start, center); }
+  }
+
+  #meetKathy
+  { @include size(400px, 65%); }
+
+  #ourMission
+  { @include size(350px, 300px); }
+}
+
+@media (max-width: 700px)
+{
+  #aboutGrid
+  { @include size(1600px, 1020px); }
+
+  #meetKathy
+  {
+    @include flex(column, flex-start, center);
+    @include size(1050px, 300px);
+    
+    .pic
+    { @include size(450px, 300px); }
+
+    .body
+    { 
+      @include flex(column, flex-start, center);
+      padding: 0;
+    }
+  }
+
+  #certifications
+  {
+    @include flex(column, flex-start, center);
+    height:  180px;
+    padding: 10px 0 0 0;
+
+    #aha
+    { padding: 0 0 20px 0; }
+
+    #ecsi
+    { padding: 0 0 20px 0; }
+  }
+}

@@ -1,0 +1,131 @@
+@import 'flex';
+@import 'mixins';
+
+$live:  "http://www.totherescuecpr.com";
+$test:  "http://www.kaetzi.com/software_portfolio/current_projects/cpr";
+$local: "file:///Users/kpolahar/Documents/CPR";
+$root:  $live;
+
+$gray-3: #212121;
+$gray-6: #3e3e3e;
+$gray-7: #484848;
+$gray-13: #838383;
+$gray-24: #efefef;
+$gray-25: #f8f8f8;
+
+$red-6: #82000a;
+$red-9: #bd000f;
+
+$teal-6: #008278;
+
+
+body
+{
+  background-color: $gray-13;
+  margin:           0;
+  padding:          0;
+}
+
+body *
+{
+  font-family: "ff-dax-wide-web-pro", sans-serif;
+  color:       $gray-3;
+  margin:      0;
+  padding:     0;
+}
+
+a, a:hover, a:before, a:after
+{ text-decoration: none; }
+
+#siteFooter
+{
+  @include flex(column, center, center);
+  
+  align-self: flex-end;
+  text-align: center;
+  height:     50px;
+  width:      100%;
+  padding:    50px 0;
+
+  p
+  {
+    font-size: 14px;
+  }
+}
+
+.text-red
+{ color: $red-9 !important; }
+
+.not-bulleted
+{
+  @include size(100%, 100%);
+
+  p
+  {
+    font-size:   20px;
+    line-height: 1.35;
+    text-align:  center;
+    word-wrap:   break-word;
+    padding:     0 10%;
+  }
+}
+
+.bulleted
+{
+  @include size(100%, 100%);
+  text-align: left;
+
+  ul
+  {
+    @include  flex(column, flex-start, center);
+
+    align-items: flex-start;
+    list-style:  none;
+
+    li
+    {
+      @include  flex(row, center, center);
+
+      &:before
+      {
+        content:     '\2022';
+        color:       $teal-6;
+        font-weight: bolder;
+        padding:     10px 10px 10px 0;
+      }
+
+       p
+      {
+        line-height: 1.2;
+        font-size:   20px;
+      }
+    }
+  }
+}
+
+.one-line
+{
+  ul
+  { padding: 0 10% !important; }
+}
+
+.two-lines
+{
+  ul
+  { padding: 2% 10% !important; }
+}
+
+.space-10
+{ margin: 5px !important; }
+
+.space-20
+{ margin: 10px !important; }
+
+.space-30
+{ margin: 15px !important; }
+
+.space-40
+{ margin: 20px !important; }
+
+.space-50
+{ margin: 25px !important; }
